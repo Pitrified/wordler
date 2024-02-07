@@ -44,7 +44,10 @@ def compute_cleaning(
             }
         )
     # print(new_lens)
-    avg_len = sum(new_lens) / len(new_lens)
+    if len(new_lens) == 0:
+        avg_len = 0
+    else:
+        avg_len = sum(new_lens) / len(new_lens)
     perf_df = pd.DataFrame(perf_ls)
     # print(perf_df)
     return avg_len, perf_df

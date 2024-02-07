@@ -51,7 +51,7 @@ class ConstraintBank:
         seen_yellow = []
         cb_norm = []
         for letter, constraint in self.zip_constraints():
-            if constraint == Constraint.YELLOW:
+            if constraint in (Constraint.YELLOW, Constraint.GREEN):
                 seen_yellow.append(letter)
             elif constraint == Constraint.BLACK:
                 if letter in seen_yellow:
